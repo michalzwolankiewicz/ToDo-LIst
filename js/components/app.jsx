@@ -25,9 +25,10 @@ class App extends React.Component {
 
     loadData(){
         let notesData = localStorage.getItem('notes');
-        console.log(notesData);
-        let notes = JSON.parse(localStorage.getItem('notes'));
-        console.log(notes.todos);
+        // console.log(notesData);
+        // let notes = JSON.parse(localStorage.getItem('notes'));
+        let notes = JSON.parse(notesData);
+        // console.log(notes.todos);
         notes.todos.sort( (a,b) => b.id-a.id);
         let nextId = notes.todos[0].id+1;
         notes.todos.sort( (a,b) => a.id-b.id);
@@ -39,8 +40,6 @@ class App extends React.Component {
             })
         }
     }
-
-
 
 
     componentDidMount(){
@@ -62,8 +61,8 @@ class App extends React.Component {
     removeTodo(id) {
         this.setState({
             todos: this.state.todos.filter((todo, index) => todo.id !== id)
-        });
-
+        },
+        this.saveData());
     }
 
     render() {

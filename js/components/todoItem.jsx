@@ -10,10 +10,6 @@ class TodoItem extends React.Component {
     }
 
 
-
-
-
-
     render() {
         return (
             <div className="todoRow">
@@ -23,6 +19,7 @@ class TodoItem extends React.Component {
                 <div>
                     <button className="removeBtn" onClick={(e)=> this.removeTodo(this.props.id) }>Remove</button>
                     <button className="editBtn">Edit</button>
+                    <button className="completedBtn">Completed</button>
                 </div>
             </div>
         );

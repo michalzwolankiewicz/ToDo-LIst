@@ -60,6 +60,20 @@ h1, h2 {
     box-shadow: none;
 }
 
+.completedBtn {
+    width: 100px;
+    margin: 20px;
+    padding: 5px;
+    border-width: 2px;
+    border-radius: 35px;
+    border-style: solid;
+    color: darkblue;
+    border-color: darkblue;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+}
+
 /* todoInput */
 
 

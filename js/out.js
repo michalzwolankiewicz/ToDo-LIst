@@ -22616,9 +22616,10 @@ var App = function (_React$Component) {
         key: 'loadData',
         value: function loadData() {
             var notesData = localStorage.getItem('notes');
-            console.log(notesData);
-            var notes = JSON.parse(localStorage.getItem('notes'));
-            console.log(notes.todos);
+            // console.log(notesData);
+            // let notes = JSON.parse(localStorage.getItem('notes'));
+            var notes = JSON.parse(notesData);
+            // console.log(notes.todos);
             notes.todos.sort(function (a, b) {
                 return b.id - a.id;
             });
@@ -22657,7 +22658,7 @@ var App = function (_React$Component) {
                 todos: this.state.todos.filter(function (todo, index) {
                     return todo.id !== id;
                 })
-            });
+            }, this.saveData());
         }
     }, {
         key: 'render',
@@ -22881,6 +22882,11 @@ var TodoItem = function (_React$Component) {
                         "button",
                         { className: "editBtn" },
                         "Edit"
+                    ),
+                    _react2.default.createElement(
+                        "button",
+                        { className: "completedBtn" },
+                        "Completed"
                     )
                 )
             );
